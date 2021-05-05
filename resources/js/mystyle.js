@@ -43,13 +43,37 @@ fetch('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-c
         console.log(regionSelectedFilter)
         
         regionDetails.innerHTML = 
-        `${regionSelectedFilter.denominazione_regione}`;
+        `
+        <h2>${regionSelectedFilter.denominazione_regione}</h2>
+        <p>Totale decessi: ${regionSelectedFilter.deceduti}</p>
+        <p>Nuovi contagiati: ${regionSelectedFilter.nuovi_positivi}</p>
+        <p>Attualmente positivi: ${regionSelectedFilter.totale_positivi}</p>
+        <p>Totale guariti: ${regionSelectedFilter.dimessi_guariti}</p>
+        
+        `;
       });
 
+    let regionMap = document.querySelectorAll('[data-region')
 
+    regionMap.forEach(el => {
+        el.addEventListener('click', function(){
 
-    
-    
-    
+            let regionSelected2 = el.dataset.region
+
+            let regionSelectedFilter2 = lastDay.filter(el => el.denominazione_regione == regionSelected2)[0]
+            
+            regionDetails.innerHTML = 
+            `
+            <h2>${regionSelectedFilter2.denominazione_regione}</h2>
+            <p>Totale decessi: ${regionSelectedFilter2.deceduti}</p>
+            <p>Nuovi contagiati: ${regionSelectedFilter2.nuovi_positivi}</p>
+            <p>Attualmente positivi: ${regionSelectedFilter2.totale_positivi}</p>
+            <p>Totale guariti: ${regionSelectedFilter2.dimessi_guariti}</p>
+            
+            `;
+        })
+    })
+
+ 
     console.log(lastDay)
 })

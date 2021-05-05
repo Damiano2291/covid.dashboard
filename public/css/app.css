@@ -10832,3 +10832,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.region-hover {
+  fill: #ddd;
+  transition: 0.2s;
+}
+
+.region-hover:hover {
+  fill: gray;
+}
