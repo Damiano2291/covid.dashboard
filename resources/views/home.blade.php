@@ -39,7 +39,8 @@
     <div class="row">
         <div class="col-12 col-md-6 my-5">
             <div id="regionDetails" class="card border p-3">
-               
+              <h3>Istruzioni</h3>
+              <p>Per accedere ai dati seleziona una regione.</p>
             </div>
         </div>
         <div class="col-12 col-md-6 my-5">
@@ -535,6 +536,9 @@
                 </g>
                 </svg>
             </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div id="chartdiv"></div>
         </div>
     </div>
 </div>
